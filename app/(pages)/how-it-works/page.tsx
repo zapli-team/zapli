@@ -9,8 +9,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(useGSAP);
-// גרסת "מאמר/בלוג" – פחות בלוקים, יותר זרימה טקסטואלית. RTL + טוקני צבע של shadcn.
-// אפשר לשים כ- app/whatsapp-automation/page.tsx
 
 export default function WhatsAppAutomationPage() {
     const root = React.useRef<HTMLDivElement | null>(null);
