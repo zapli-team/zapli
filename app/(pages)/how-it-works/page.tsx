@@ -30,11 +30,6 @@ export default function WhatsAppAutomationPage() {
                     <h1 className="text-3xl md:text-4xl font-semibold leading-tight">
                         איך להפוך את הוואטסאפ האישי שלך לאוטומטי
                     </h1>
-                    {/* <p className="text-muted-foreground">
-                        אם את/ה פרילנסר/ית או בעל/ת עסק קטן, סביר להניח שאת רוב העבודה את/ה עושה בוואטסאפ. בדיוק בשביל
-                        זה אנחנו בונים אוטומציות קטנות שמפנות זמן, מצמצמות טעויות, ומשאירות את השיחה אנושית. זה לא
-                        צ׳אטבוט ולא שיווק המוני - אלא דברים קטנים שעוזרים ביום-יום.
-                    </p> */}
                 </header>
 
                 <section className="space-y-3 border-t pt-4 fade-in">
