@@ -15,7 +15,7 @@ function ServicesSection() {
                 </div>
                 <div className="max-w-full flex flex-col lg:flex-row mx-auto mt-8 gap-6 *:text-center md:mt-16">
                     {SERVICES.slice(0, 3).map((service) => (
-                        <Card key={service.title} className="group border-0 shadow-none bg-background">
+                        <Card key={service.title} className="group border-0 shadow-none bg-transparent">
                             <CardHeader>
                                 <CardDecorator>
                                     <service.icon className="size-6" />
@@ -30,7 +30,7 @@ function ServicesSection() {
                 </div>
                 <div className="max-w-full flex flex-col lg:flex-row mx-auto gap-6 *:text-center">
                     {SERVICES.slice(3).map((service) => (
-                        <Card key={service.title} className="group border-0 shadow-none bg-background">
+                        <Card key={service.title} className="group border-0 shadow-none bg-transparent">
                             <CardHeader>
                                 <CardDecorator>
                                     <service.icon className="size-6" />

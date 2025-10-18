@@ -11,7 +11,7 @@ function AboutSection() {
         <section id="about" className="py-24 md:py-48">
             <div className="mx-auto max-w-5xl px-6">
                 <div className="grid gap-6 md:grid-cols-2 md:gap-12">
-                    <div className="space-y-4">
+                    <div className="space-y-6">
                         <h2 className="text-4xl font-medium">אנחנו צוות קטן עם תשוקה לטכנולוגיה ועסקים</h2>
                         <div className="mx-4 inline-flex items-center -space-x-2">
                             {TEAM.map((member) => (
@@ -43,9 +43,9 @@ function AboutSection() {
                             אנחנו מאמינים שטכנולוגיה צריכה לשרת אותך – לא להעמיס עליך. לכן כל מערכת שאנחנו בונים היא
                             ברורה, נוחה לתחזוקה, ומתאימה בדיוק לאופן שבו אתה עובד.
                         </p>
-                        <Button asChild variant="secondary" size="sm" className="gap-1 pl-1.5">
+                        <Button asChild variant="secondary" size="sm" className="gap-1 pl-1.5 mt-6">
                             <Link href="#">
-                                <span>קרא עוד עלינו</span>
+                                <span>לקביעת פגישה</span>
                                 <ChevronLeft className="size-2" />
                             </Link>
                         </Button>

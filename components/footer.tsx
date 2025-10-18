@@ -37,7 +37,7 @@ function Footer() {
                 </div>
                 <span className="text-muted-foreground block text-center text-sm">
                     {" "}
-                    זאפלי {new Date().getFullYear()} © כל הזכויות שמורות
+                    זאפלי {new Date().getFullYear()} © כל הזכויות שמורות.
                 </span>
             </div>
         </footer>

@@ -34,6 +34,11 @@ export const SOCIALS = [
         href: "mailto:roy@zapli.co.il",
     },
     {
+        title: "+972-52-708-8557",
+        icon: TbBrandWhatsapp,
+        href: "https://wa.me/972527088557",
+    },
+    {
         icon: TbBrandInstagramFilled,
         href: "https://www.instagram.com/roybarzilay1/",
     },
@@ -48,10 +53,6 @@ export const SOCIALS = [
     {
         icon: TbBrandFacebookFilled,
         href: "https://www.facebook.com/roybarzilay1/",
-    },
-    {
-        icon: TbBrandWhatsapp,
-        href: "https://wa.me/972527088557",
     },
 ];
 

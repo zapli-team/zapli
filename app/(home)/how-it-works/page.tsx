@@ -21,7 +21,7 @@ export default function WhatsAppAutomationPage() {
     );
 
     return (
-        <div ref={root} dir="rtl" className="mx-auto max-w-3xl px-4 py-12 text-right [&_p,&_ol,&_ul]:font-rubik">
+        <div ref={root} dir="rtl" className="mx-auto max-w-3xl px-4 pt-48 pb-12 text-right [&_p,&_ol,&_ul]:font-rubik">
             <article className="space-y-8">
                 <header className="space-y-3 fade-in text-center">
                     <p className="text-xs text-muted-foreground">
