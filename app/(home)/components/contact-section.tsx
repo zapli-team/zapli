@@ -16,7 +16,7 @@ function ContactSection() {
 
                     <div className="mt-12 flex flex-wrap justify-center gap-4">
                         <Button asChild size="lg" className="font-semibold tracking-wide gap-1">
-                            <Link href="#">
+                            <Link href="/contact">
                                 דברו איתנו
                                 <ChevronLeft className="size-3" />
                             </Link>

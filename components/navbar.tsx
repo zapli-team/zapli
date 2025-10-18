@@ -30,7 +30,7 @@ function Navbar({ className, ...props }: React.ComponentProps<"div">) {
                 ))}
             </nav>
             <Button asChild className="font-semibold tracking-wide gap-1">
-                <Link href="#">
+                <Link href="/contact">
                     צרו קשר
                     <ChevronLeft className="size-3" />
                 </Link>

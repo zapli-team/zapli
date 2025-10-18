@@ -23,7 +23,7 @@ export const NAVIGATION = [
     },
     {
         title: "צרו קשר",
-        href: "/#contact",
+        href: "/contact",
     },
 ];
 
