@@ -4,6 +4,8 @@ import "./globals.css";
 import { Roboto, Rubik } from "next/font/google";
 import LocalFont from "next/font/local";
 
+import { Toaster } from "@/components/ui/sonner";
+import QueryProvider from "@/providers/query-provider";
 import { cn } from "@/utils/funcs";
 
 const ploni = LocalFont({
@@ -48,7 +50,10 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="he" dir="rtl" className="dark" suppressHydrationWarning>
-            <body className={cn("antialiased", ploni.variable, rubik.variable, roboto.variable)}>{children}</body>
+            <body className={cn("antialiased", ploni.variable, rubik.variable, roboto.variable)}>
+                <QueryProvider>{children}</QueryProvider>
+                <Toaster />
+            </body>
         </html>
     );
 }
