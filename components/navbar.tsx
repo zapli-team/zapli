@@ -1,33 +1,37 @@
+import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
-import { TbBrandInstagramFilled, TbBrandTiktokFilled, TbMailFilled } from "react-icons/tb";
 
+import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/ui/logo";
+import { SOCIALS } from "@/utils/consts";
 import { cn } from "@/utils/funcs";
 
-interface NavbarProps extends React.ComponentProps<"div"> {}
-
-function Navbar({ className, ...props }: NavbarProps) {
+function Navbar({ className, ...props }: React.ComponentProps<"div">) {
     return (
-        <div
-            dir="ltr"
-            className={cn("flex w-full items-center sm:justify-center py-4 px-6 font-rubik gap-6", className)}
-            {...props}
-        >
-            <Link href="/" title="עמוד הבית" className="absolute right-6">
+        <div className={cn("flex items-center justify-between w-full py-4 px-6", className)} {...props}>
+            <Link href="/" title="עמוד הבית">
                 <Logo />
             </Link>
-            <Link href="mailto:roy@brzly.com" className="flex items-center gap-2">
-                <TbMailFilled size={20} />
-                <span className="hidden sm:inline-flex">roy@brzly.com</span>
-            </Link>
-            |
-            <Link href="https://www.instagram.com/roybarzilay1/" target="_blank" rel="noreferrer">
-                <TbBrandInstagramFilled size={20} />
-            </Link>
-            |
-            <Link href="https://www.tiktok.com/@roybarzilay1" target="_blank" rel="noreferrer">
-                <TbBrandTiktokFilled size={20} />
-            </Link>
+            <nav dir="ltr" className="flex items-center justify-center font-rubik gap-12">
+                {SOCIALS.map((social) => (
+                    <Link
+                        key={social.href}
+                        href={social.href}
+                        className="relative flex items-center gap-2"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        <social.icon size={20} />
+                        {social.title && <span className="hidden sm:inline-flex">{social.title}</span>}
+                    </Link>
+                ))}
+            </nav>
+            <Button asChild className="font-semibold tracking-wide gap-1">
+                <Link href="#">
+                    צרו קשר
+                    <ChevronLeft className="size-3" />
+                </Link>
+            </Button>
         </div>
     );
 }

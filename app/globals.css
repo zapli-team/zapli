@@ -173,7 +173,7 @@
     }
     :root,
     body {
-        @apply h-full;
+        @apply h-full scroll-smooth;
     }
     body {
         @apply bg-background text-foreground font-ploni;
