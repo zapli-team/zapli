@@ -1,44 +1,45 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import z from "zod";
 
-import { AdminEmailTemplate, SenderEmailTemplate } from "@/components/email-templates";
+import { ContactAdminEmailTemplate, ContactSenderEmailTemplate } from "@/components/email-templates/contact";
 
-export const runtime = "nodejs";
+const schema = z.object({
+    firstName: z.string(),
+    lastName: z.string(),
+    email: z.email(),
+    phone: z.string(),
+    message: z.string(),
+});
 
 export async function POST(req: NextRequest) {
     try {
-        const data = await req.json();
+        const body = await req.json();
         const resend = new Resend(process.env.RESEND_API_KEY);
-        const params = req.nextUrl.searchParams;
-        const source = params.get("source");
+        const { success, data } = schema.safeParse(body);
 
-        if (!data.firstName || !data.lastName || !data.email || !data.phone || !data.message) {
-            return new NextResponse("Insufficient data", { status: 400 });
+        if (!success || !data) {
+            return new NextResponse("Incorrect data", { status: 400 });
         }
 
         const adminEmail = await resend.emails.send({
             from: `${data.firstName} ${data.lastName} <website@zapli.co.il>`,
             to: ["admin@zapli.co.il"],
-            subject: `New Form Submition From zapli.co.il (Source: ${source})`,
-            react: AdminEmailTemplate(data),
+            subject: 'מישהו חדש נרשם בטופס "צרו קשר"',
+            react: ContactAdminEmailTemplate(data),
         });
 
         if (adminEmail.error) {
-            return new NextResponse(
-                `Something went wrong when trying to send the admin email: ${JSON.stringify(adminEmail.error)}`,
-                {
-                    status: 500,
-                }
-            );
+            return new NextResponse(`Something went wrong when trying to send the admin email: ${adminEmail.error}`, {
+                status: 500,
+            });
         }
 
-        if (source === "Guide") return NextResponse.json({ admin: adminEmail.data });
-
         const senderEmail = await resend.emails.send({
-            from: `Zapli Team <noreply@zapli.co.il>`,
+            from: `צוות זאפלי <noreply@zapli.co.il>`,
             to: [data.email],
             subject: "קיבלנו את ההודעה שלך",
-            react: SenderEmailTemplate({ firstName: data.firstName }),
+            react: ContactSenderEmailTemplate({ firstName: data.firstName }),
         });
 
         if (senderEmail.error) {

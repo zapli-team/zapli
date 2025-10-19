@@ -1,66 +1,48 @@
-"use client";
-
 import axios from "axios";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
-import { z } from "zod";
+import z from "zod";
 
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Spinner } from "@/components/ui/spinner";
-import { Textarea } from "@/components/ui/textarea";
-import { cn } from "@/utils/funcs";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 
-const phoneRegex = /^\+972\d{8,9}$/;
-
-const contactSchema = z.object({
+const formSchema = z.object({
     firstName: z.string("שם פרטי הוא שדה חובה").trim().min(2, "שם פרטי חייב להיות באורך של 2 תווים לפחות"),
     lastName: z.string("שם משפחה הוא שדה חובה").trim().min(2, "שם משפחה חייב להיות באורך של 2 תווים לפחות"),
     email: z.email("דוא" + '"' + "ל הוא שדה חובה").trim(),
-    phone: z
-        .string("טלפון הוא שדה חובה")
-        .trim()
-        .transform((v) => v.replace(/\s|-/g, ""))
-        .refine((v) => v.startsWith("+972"), "הטלפון חייב להתחיל ב-972+")
-        .refine((v) => phoneRegex.test(v), "מספר הטלפון צריך להכיל 8–9 ספרות לאחר 972+"),
-    message: z
-        .string("הודעה היא שדה חובה")
-        .trim()
-        .min(10, "ההודעה צריכה להיות באורך של לפחות 10 תווים")
-        .max(1000, "ההודעה ארוכה מדי (מקסימום 1000 תווים)"),
+    timeWaster: z.string().optional(),
 });
 
-type FormValues = z.infer<typeof contactSchema>;
+type FormValues = z.infer<typeof formSchema>;
 
-function ContactForm({ className, ...props }: React.ComponentProps<"form">) {
+function GuideForm() {
+    const router = useRouter();
+
     const form = useForm<FormValues>({
-        resolver: zodResolver(contactSchema),
-        mode: "onTouched",
+        resolver: zodResolver(formSchema),
         defaultValues: {
             firstName: "",
             lastName: "",
             email: "",
-            phone: "+972",
-            message: "",
+            timeWaster: "",
         },
     });
 
     const { mutate: send, isPending } = useMutation({
         mutationKey: ["send-email"],
-        mutationFn: async (data: FormValues) => axios.post("/api/email/contact", data),
+        mutationFn: async (data: FormValues) => axios.post("/api/email/guide", data),
         onError: () => toast.error("משהו השתבש בשליחת הבקשה שלכם. אנא נסו שוב מאוחר יותר."),
-        onSuccess: () => {
-            toast.success("בקשתכם נשלחה בהצלחה!");
-            form.reset({ ...form.getValues(), message: "" });
-        },
+        onSuccess: () => router.push("/guide/success"),
     });
 
     return (
         <Form {...form}>
-            <form {...props} onSubmit={form.handleSubmit((d) => send(d))} className={cn("space-y-6", className)}>
+            <form className="space-y-4" onSubmit={form.handleSubmit((d) => send(d))}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <FormField
                         control={form.control}
@@ -96,7 +78,7 @@ function ContactForm({ className, ...props }: React.ComponentProps<"form">) {
                     name="email"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>דוא"ל</FormLabel>
+                            <FormLabel>אימייל</FormLabel>
                             <FormControl>
                                 <Input
                                     dir="ltr"
@@ -115,38 +97,17 @@ function ContactForm({ className, ...props }: React.ComponentProps<"form">) {
 
                 <FormField
                     control={form.control}
-                    name="phone"
+                    name="timeWaster"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>מס' טלפון</FormLabel>
+                            <FormLabel>
+                                מה מבזבז לך הכי הרבה זמן כרגע?{" "}
+                                <span className="text-muted-foreground text-sm font-normal">(אופציונלי)</span>
+                            </FormLabel>
                             <FormControl>
-                                <Input
-                                    type="tel"
-                                    inputMode="tel"
-                                    placeholder="+972541234567"
-                                    {...field}
-                                    onFocus={(e) => {
-                                        if (!e.currentTarget.value) {
-                                            field.onChange("+972");
-                                        }
-                                    }}
-                                />
+                                <Input placeholder="לרדוף אחרי לקוחות לתשובות" {...field} />
                             </FormControl>
-                            <FormDescription>מספר ישראלי בפורמט בינלאומי 9725XXXXXXXX+</FormDescription>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-
-                <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>הודעה</FormLabel>
-                            <FormControl>
-                                <Textarea placeholder="כיתבו כאן את ההודעה שלכם..." className="min-h-32" {...field} />
-                            </FormControl>
+                            <FormDescription>זה עוזר לנו להבין איך לעזור לך.</FormDescription>
                             <FormMessage />
                         </FormItem>
                     )}
@@ -154,11 +115,15 @@ function ContactForm({ className, ...props }: React.ComponentProps<"form">) {
 
                 <Button type="submit" className="w-full text-lg h-12 font-semibold rounded-full" disabled={isPending}>
                     {isPending && <Spinner />}
-                    שליחה
+                    שלח לי את המדריך בחינם
                 </Button>
+
+                <p className="text-xs text-center text-muted-foreground font-rubik">
+                    לא נשלח לך ספאם. רק תוכן שימושי מדי פעם.
+                </p>
             </form>
         </Form>
     );
 }
 
-export { ContactForm };
+export { GuideForm };

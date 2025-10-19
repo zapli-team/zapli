@@ -1,0 +1,117 @@
+import { Body, Container, Head, Heading, Hr, Html, Link, Preview, Section, Text } from "@react-email/components";
+
+import { styles } from "./utils/consts";
+
+export function ContactAdminEmailTemplate({
+    firstName,
+    lastName,
+    email,
+    phone,
+    message,
+}: {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone: string;
+    message: string;
+}) {
+    return (
+        <Html>
+            <Head />
+            <Preview>
+                New contact form: {firstName} {lastName}
+            </Preview>
+            <Body style={styles.main}>
+                <Container style={styles.container}>
+                    <Heading style={styles.h1}>📬 מישהו חדש נרשם בטופס "צרו קשר"</Heading>
+
+                    <Section style={styles.infoSection}>
+                        <Text style={styles.label}>שם מלא:</Text>
+                        <Text style={styles.value}>
+                            {firstName} {lastName}
+                        </Text>
+                    </Section>
+
+                    <Section style={styles.infoSection}>
+                        <Text style={styles.label}>דוא"ל:</Text>
+                        <Text style={styles.value}>
+                            <Link href={`mailto:${email}`} style={styles.emailLink}>
+                                {email}
+                            </Link>
+                        </Text>
+                    </Section>
+
+                    <Section style={styles.infoSection}>
+                        <Text style={styles.label}>מס' טלפון:</Text>
+                        <Text style={{ ...styles.value, direction: "ltr" }}>
+                            <Link href={`tel:${phone}`} style={styles.emailLink}>
+                                {phone}
+                            </Link>
+                        </Text>
+                    </Section>
+
+                    <Hr style={styles.hr} />
+
+                    <Section style={styles.infoSection}>
+                        <Text style={styles.label}>הודעה:</Text>
+                        <Section style={styles.messageBox}>
+                            <Text style={styles.messageText}>{message}</Text>
+                        </Section>
+                    </Section>
+                </Container>
+            </Body>
+        </Html>
+    );
+}
+
+export function ContactSenderEmailTemplate({ firstName }: { firstName: string }) {
+    return (
+        <Html dir="rtl">
+            <Head />
+            <Preview>תודה שפנית אלינו, {firstName}!</Preview>
+            <Body style={styles.main}>
+                <Container style={styles.container}>
+                    <Heading style={styles.h1}>תודה שפנית אלינו, {firstName}! 🙏</Heading>
+
+                    <Text style={styles.text}>קיבלנו את ההודעה שלך ונחזור אליך בהקדם האפשרי.</Text>
+
+                    <Text style={styles.text}>בדרך כלל לוקח לנו פחות מ-24 שעות לענות.</Text>
+
+                    <Section style={styles.tipBox}>
+                        <Text style={styles.tipText}>
+                            <strong>פנייה דחופה?</strong>
+                            <br />
+                            תרגיש חופשי לפנות אלינו בוואטסאפ:{" "}
+                            <Link href="https://wa.me/972527088557" style={styles.whatsappLink}>
+                                052-708-8557
+                            </Link>
+                        </Text>
+                    </Section>
+
+                    <Text style={styles.signature}>
+                        בברכה,
+                        <br />
+                        צוות זאפלי
+                    </Text>
+
+                    <Hr style={styles.hr} />
+
+                    <Section style={styles.companyInfo}>
+                        <Text style={styles.companyText}>
+                            <strong>זאפלי</strong> - מערכות חכמות וכלי AI לפרילנסרים ובעלי עסקים קטנים
+                        </Text>
+                        <Text style={styles.companyText}>
+                            <Link href="https://zapli.co.il" style={styles.link}>
+                                zapli.co.il
+                            </Link>
+                            {" | "}
+                            <Link href="mailto:roy@zapli.co.il" style={styles.link}>
+                                roy@zapli.co.il
+                            </Link>
+                        </Text>
+                    </Section>
+                </Container>
+            </Body>
+        </Html>
+    );
+}
