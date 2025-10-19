@@ -81,7 +81,7 @@ export function ContactSenderEmailTemplate({ firstName }: { firstName: string })
                         <Text style={styles.tipText}>
                             <strong>פנייה דחופה?</strong>
                             <br />
-                            תרגיש חופשי לפנות אלינו בוואטסאפ:{" "}
+                            תרגישו חופשי לפנות אלינו בוואטסאפ:{" "}
                             <Link href="https://wa.me/972527088557" style={styles.whatsappLink}>
                                 052-708-8557
                             </Link>

@@ -75,21 +75,21 @@ export async function GuideSenderEmailTemplate({ firstName }: { firstName: strin
             <Preview>המדריך המלא ל-5 אוטומציות שיחסכו לך 5-10 שעות בשבוע | זאפלי</Preview>
             <Body style={styles.main}>
                 <Container style={styles.container}>
-                    <Heading style={styles.h1}>היי {firstName || "שם"} 👋</Heading>
+                    <Heading style={styles.h1}>היי {firstName} 👋</Heading>
 
-                    <Text style={styles.text}>המדריך שלך כאן! לחץ על הכפתור למטה כדי להוריד אותו:</Text>
+                    <Text style={styles.text}>המדריך שלך כאן! לחצו על הכפתור למטה כדי להוריד אותו:</Text>
 
                     <Section style={styles.buttonContainer}>
                         <Button
                             style={styles.button}
                             href="https://zapli.co.il/downloads/מדריך - 5 משימות שכל בעל עסק צריך לבצע אוטומטית השבוע.pdf"
                         >
-                            📥 הורד את המדריך המלא
+                            ↓ הורידו את המדריך המלא
                         </Button>
                     </Section>
 
                     <Text style={styles.text}>
-                        <strong>בתוך המדריך תמצא:</strong>
+                        <strong>בתוך המדריך תמצאו:</strong>
                     </Text>
 
                     <Section style={styles.list}>
@@ -101,7 +101,7 @@ export async function GuideSenderEmailTemplate({ firstName }: { firstName: strin
 
                     <Section style={styles.tipBox}>
                         <Text style={styles.tipText}>
-                            💡 <strong>טיפ חשוב:</strong> תתחיל מאוטומציה אחת. לא צריך לעשות הכל בבת אחת.
+                            💡 <strong>טיפ חשוב:</strong> תתחילו מאוטומציה אחת. לא צריך לעשות הכל בבת אחת.
                         </Text>
                     </Section>
 
@@ -117,10 +117,10 @@ export async function GuideSenderEmailTemplate({ firstName }: { firstName: strin
 
                     <Section style={styles.footer}>
                         <Text style={styles.footerText}>
-                            <strong>צריך עזרה עם ההטמעה?</strong>
+                            <strong>צריכים עזרה עם ההטמעה?</strong>
                         </Text>
                         <Text style={styles.footerText}>
-                            אם אתה רוצה שנעזור לך להגדיר את המערכות האלה (או לבנות משהו מותאם אישית), בוא נדבר.
+                            אם אתם רוצים שנעזור לכם להגדיר את המערכות האלה (או לבנות משהו מותאם אישית), בואו נדבר.
                         </Text>
                         <Link href="https://zapli.co.il/contact" style={styles.footerLink}>
                             צרו איתנו קשר ←

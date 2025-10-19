@@ -12,14 +12,14 @@ export default function GuideSuccessPage() {
                     <div className="mx-auto mb-4 w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
                         <CheckCircle2 className="w-10 h-10 text-green-600" />
                     </div>
-                    <CardTitle className="text-2xl">המדריך בדרך אליך!</CardTitle>
+                    <CardTitle className="text-3xl font-bold">המדריך בדרך אליך!</CardTitle>
                     <CardDescription className="text-base">
-                        שלחנו את המדריך המלא למייל שלך. תבדוק את תיבת הדואר (וגם ספאם, למקרה).
+                        שלחנו את המדריך המלא למייל שלכם. תבדקו את תיבת הדואר (וגם ספאם, למקרה).
                     </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                    <div className="bg-muted p-4 rounded-lg">
-                        <p className="text-sm text-muted-foreground mb-2">בינתיים, כמה דברים שכדאי לך לדעת:</p>
+                    <div className="bg-muted p-4 rounded-lg font-rubik">
+                        <p className="text-sm text-muted-foreground mb-2">בינתיים, כמה דברים שכדאי לכם לדעת:</p>
                         <ul className="text-sm space-y-2">
                             <li className="flex items-start gap-2">
                                 <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
@@ -37,14 +37,12 @@ export default function GuideSuccessPage() {
                     </div>
 
                     <div className="bg-primary/5 border border-primary/20 p-4 rounded-lg">
-                        <p className="font-semibold mb-2">צריך עזרה עם ההטמעה?</p>
-                        <p className="text-sm text-muted-foreground mb-3">
-                            אם אתה רוצה שנעזור לך להגדיר את המערכות האלה (או לבנות משהו מותאם אישית), בוא נדבר.
+                        <p className="font-semibold mb-2">צריכים עזרה עם ההטמעה?</p>
+                        <p className="text-sm text-muted-foreground mb-3 font-rubik">
+                            אם אתם רוצים שנעזור לכם להגדיר את המערכות האלה (או לבנות משהו מותאם אישית), בואו נדבר.
                         </p>
-                        <Button className="w-full" asChild>
-                            <Link href="https://calendly.com/zapli" target="_blank" rel="noopener noreferrer">
-                                קבע שיחת ייעוץ חינמית
-                            </Link>
+                        <Button className="w-full tracking-wide" asChild>
+                            <Link href="/contact">צרו איתנו קשר</Link>
                         </Button>
                     </div>
                 </CardContent>
