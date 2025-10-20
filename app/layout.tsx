@@ -38,16 +38,12 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-    title: "זאפלי | וואטסאפ אוטומטי לעצמאים ועסקים קטנים",
+    title: "זאפלי | מערכות חכמות לעסקים קטנים בישראל",
     description:
-        "זאפלי עוזרת לפרילנסרים, נותני שירות ובעלי עסקים קטנים לנהל את הוואטסאפ בצורה חכמה ופשוטה. אוטומציות מותאמות אישית שמאשרות פניות, מתזכרות לקוחות ומחברות ליומן או לתשלום – בלי בלאגן, בלי צ’אטבוטים ובלי סיכון לחשבון שלך. ניהול שוטף בקלות, כדי שתוכל להתמקד בעבודה שלך.",
+        "מערכות אוטומציה ו-AI פשוטות לעסקים קטנים ופרילנסרים בישראל. חוסכים זמן, מצמצמים כאוס ומנהלים את העסק בביטחון – בלי טכנולוגיה מיותרת. זאפלי בונים מערכות חכמות שמחברות בין וואטסאפ, גוגל, CRM ו-AI כדי להוריד עומס מהעסק שלך. פתרונות פשוטים, חכמים, בעברית – שנבנו במיוחד לעסקים ישראליים.",
 };
 
-export default function RootLayout({
-    children,
-}: Readonly<{
-    children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="he" dir="rtl" className="dark" suppressHydrationWarning>
             <body className={cn("antialiased", ploni.variable, rubik.variable, roboto.variable)}>
