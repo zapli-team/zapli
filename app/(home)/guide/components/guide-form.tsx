@@ -43,7 +43,7 @@ function GuideForm() {
     return (
         <Form {...form}>
             <form className="space-y-4" onSubmit={form.handleSubmit((d) => send(d))}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                     <FormField
                         control={form.control}
                         name="firstName"

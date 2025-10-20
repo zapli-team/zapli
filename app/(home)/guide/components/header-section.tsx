@@ -15,7 +15,7 @@ function HeaderSection() {
                     חסוך 5-10 שעות בשבוע עם אוטומציות פשוטות שאפשר להטמיע היום.
                 </p>
 
-                <div className="flex flex-wrap justify-center gap-6 mb-12 text-sm text-muted-foreground">
+                <div className="flex flex-col w-fit mx-auto sm:flex-row justify-center gap-6 mb-12 text-sm text-muted-foreground">
                     <div className="flex items-center gap-2">
                         <CheckCircle2 className="w-5 h-5 text-primary" />
                         <span>ללא עלויות גבוהות</span>

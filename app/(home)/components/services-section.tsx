@@ -13,7 +13,7 @@ function ServicesSection() {
                         אתה עובד.
                     </p>
                 </div>
-                <div className="max-w-full flex flex-col lg:flex-row mx-auto mt-8 gap-6 *:text-center md:mt-16">
+                <div className="max-w-full flex flex-col lg:flex-row mx-auto mt-8 *:text-center md:mt-16">
                     {SERVICES.slice(0, 3).map((service) => (
                         <Card key={service.title} className="group border-0 shadow-none bg-transparent">
                             <CardHeader>
@@ -28,7 +28,7 @@ function ServicesSection() {
                         </Card>
                     ))}
                 </div>
-                <div className="max-w-full flex flex-col lg:flex-row mx-auto gap-6 *:text-center">
+                <div className="max-w-full flex flex-col lg:flex-row mx-auto *:text-center">
                     {SERVICES.slice(3).map((service) => (
                         <Card key={service.title} className="group border-0 shadow-none bg-transparent">
                             <CardHeader>
@@ -43,9 +43,9 @@ function ServicesSection() {
                         </Card>
                     ))}
                 </div>
-                <div className="flex items-start justify-center gap-2 mt-20">
+                <div className="flex items-start justify-center gap-2 my-16">
                     <h3 className="font-semibold text-lg whitespace-nowrap">המטרה שלנו 🎯</h3>
-                    <p className="font-rubik mt-[3px]">
+                    <p className="font-rubik mt-0.5">
                         לאפשר לך לעבוד פחות – ולהרוויח יותר, עם עסק שעובד חכם, מסודר ושקט בראש.
                     </p>
                 </div>

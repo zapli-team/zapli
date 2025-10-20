@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 function ContactSection() {
     return (
-        <section id="contact" className="py-16 md:py-32">
+        <section id="contact" className="py-32">
             <div className="mx-auto max-w-5xl px-6">
                 <div className="text-center">
                     <h2 className="text-balance text-4xl font-semibold lg:text-5xl">איך אפשר להתחיל?</h2>

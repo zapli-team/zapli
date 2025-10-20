@@ -7,9 +7,9 @@ import { GuideForm } from "./guide-form";
 
 function ContentSection() {
     return (
-        <section id="content" className="container mx-auto px-4 pb-16">
+        <section id="content" className="container max-w-full mx-auto px-4 pb-16">
             <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-start">
-                <div className="space-y-6">
+                <div className="space-y-6 max-md:order-1">
                     <div>
                         <h2 className="text-3xl font-bold mb-6">מה תלמדו במדריך?</h2>
                         <div className="space-y-4">
