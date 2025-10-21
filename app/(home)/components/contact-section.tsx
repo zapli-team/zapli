@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 
 import { Button } from "@/components/ui/button";
+import { DEFAULT_WHATSAPP_MSG } from "@/utils/consts";
 
 function ContactSection() {
     return (
@@ -23,9 +24,14 @@ function ContactSection() {
                         </Button>
 
                         <Button asChild size="lg" variant="outline" className="font-semibold tracking-wide gap-1">
-                            <Link href="https://wa.me/972527088557" target="_blank" rel="noreferrer">
+                            <Link
+                                href={`https://wa.me/972507537633?text=${DEFAULT_WHATSAPP_MSG}`}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
                                 ישירות בוואטסאפ
                                 <FaWhatsapp />
+                                ``
                             </Link>
                         </Button>
                     </div>

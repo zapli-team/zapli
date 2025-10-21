@@ -8,9 +8,17 @@ export const styles: Record<string, CSSProperties> = {
     },
     container: {
         backgroundColor: "#ffffff",
-        padding: "20px 48px",
+        padding: "20px auto",
         margin: "64px auto",
         maxWidth: "600px",
+        direction: "rtl",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    content: {
+        margin: "64px auto",
+        maxWidth: "504px",
         direction: "rtl",
     },
     h1: {

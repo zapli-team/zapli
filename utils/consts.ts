@@ -8,6 +8,8 @@ import {
     TbMailFilled,
 } from "react-icons/tb";
 
+export const DEFAULT_WHATSAPP_MSG = encodeURIComponent("מה קורה? אשמח לדבר אתכם על העסק שלי");
+
 export const NAVIGATION = [
     {
         title: "ראשי",
@@ -29,18 +31,18 @@ export const NAVIGATION = [
 
 export const SOCIALS = [
     {
-        title: "roy@zapli.co.il",
+        title: "barak@zapli.co.il",
         icon: TbMailFilled,
-        href: "mailto:roy@zapli.co.il",
+        href: "mailto:barak@zapli.co.il",
     },
     {
-        title: "+972-52-708-8557",
+        title: "+972-50-753-7633",
         icon: TbBrandWhatsapp,
-        href: "https://wa.me/972527088557",
+        href: `https://wa.me/972507537633?text=${DEFAULT_WHATSAPP_MSG}`,
     },
     {
         icon: TbBrandInstagramFilled,
-        href: "https://www.instagram.com/roybarzilay1/",
+        href: "https://www.instagram.com/roybarzilay1",
     },
     {
         icon: TbBrandTiktokFilled,
@@ -52,7 +54,7 @@ export const SOCIALS = [
     },
     {
         icon: TbBrandFacebookFilled,
-        href: "https://www.facebook.com/roybarzilay1/",
+        href: "https://www.facebook.com/zapli.co.il",
     },
 ];
 

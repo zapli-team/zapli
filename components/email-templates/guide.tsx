@@ -33,35 +33,37 @@ export function GuideAdminEmailTemplate({
             </Preview>
             <Body style={styles.main}>
                 <Container style={styles.container}>
-                    <Heading style={styles.h1}>🎯 מישהו חדש נרשם בטופס לקבלת המדריך</Heading>
+                    <Container style={styles.content}>
+                        <Heading style={styles.h1}>🎯 מישהו חדש נרשם בטופס לקבלת המדריך</Heading>
 
-                    <Section style={styles.infoSection}>
-                        <Text style={styles.label}>שם מלא:</Text>
-                        <Text style={styles.value}>
-                            {firstName} {lastName}
-                        </Text>
-                    </Section>
+                        <Section style={styles.infoSection}>
+                            <Text style={styles.label}>שם מלא:</Text>
+                            <Text style={styles.value}>
+                                {firstName} {lastName}
+                            </Text>
+                        </Section>
 
-                    <Section style={styles.infoSection}>
-                        <Text style={styles.label}>דוא"ל:</Text>
-                        <Text style={styles.value}>
-                            <Link href={`mailto:${email}`} style={styles.emailLink}>
-                                {email}
-                            </Link>
-                        </Text>
-                    </Section>
+                        <Section style={styles.infoSection}>
+                            <Text style={styles.label}>דוא"ל:</Text>
+                            <Text style={styles.value}>
+                                <Link href={`mailto:${email}`} style={styles.emailLink}>
+                                    {email}
+                                </Link>
+                            </Text>
+                        </Section>
 
-                    {timeWaster && (
-                        <>
-                            <Hr style={styles.hr} />
-                            <Section style={styles.infoSection}>
-                                <Text style={styles.label}>מה שמבזבז להם הכי הרבה זמן:</Text>
-                                <Section style={styles.timeWasterBox}>
-                                    <Text style={styles.timeWasterText}>{timeWaster}</Text>
+                        {timeWaster && (
+                            <>
+                                <Hr style={styles.hr} />
+                                <Section style={styles.infoSection}>
+                                    <Text style={styles.label}>מה שמבזבז להם הכי הרבה זמן:</Text>
+                                    <Section style={styles.timeWasterBox}>
+                                        <Text style={styles.timeWasterText}>{timeWaster}</Text>
+                                    </Section>
                                 </Section>
-                            </Section>
-                        </>
-                    )}
+                            </>
+                        )}
+                    </Container>
                 </Container>
             </Body>
         </Html>
@@ -75,74 +77,72 @@ export async function GuideSenderEmailTemplate({ firstName }: { firstName: strin
             <Preview>המדריך המלא ל-5 אוטומציות שיחסכו לך 5-10 שעות בשבוע | זאפלי</Preview>
             <Body style={styles.main}>
                 <Container style={styles.container}>
-                    <Heading style={styles.h1}>היי {firstName} 👋</Heading>
+                    <Container style={styles.content}>
+                        <Heading style={styles.h1}>היי {firstName} 👋</Heading>
 
-                    <Text style={styles.text}>המדריך שלך כאן! לחצו על הכפתור למטה כדי להוריד אותו:</Text>
+                        <Text style={styles.text}>המדריך שלך כאן! לחצו על הכפתור למטה כדי להוריד אותו:</Text>
 
-                    <Section style={styles.buttonContainer}>
-                        <Button
-                            style={styles.button}
-                            href="https://zapli.co.il/downloads/מדריך - 5 משימות שכל בעל עסק צריך לבצע אוטומטית השבוע.pdf"
-                        >
-                            ↓ הורידו את המדריך המלא
-                        </Button>
-                    </Section>
+                        <Section style={styles.buttonContainer}>
+                            <Button
+                                style={styles.button}
+                                href="https://zapli.co.il/downloads/מדריך - 5 משימות שכל בעל עסק צריך לבצע אוטומטית השבוע.pdf"
+                            >
+                                ↓ הורידו את המדריך המלא
+                            </Button>
+                        </Section>
 
-                    <Text style={styles.text}>
-                        <strong>בתוך המדריך תמצאו:</strong>
-                    </Text>
-
-                    <Section style={styles.list}>
-                        <Text style={styles.listItem}>✅ 5 אוטומציות שאפשר להטמיע היום</Text>
-                        <Text style={styles.listItem}>✅ הכלים המדויקים (רובם חינמיים)</Text>
-                        <Text style={styles.listItem}>✅ הוראות צעד אחר צעד בעברית</Text>
-                        <Text style={styles.listItem}>✅ טיפים למעקב ושיפור מתמשך</Text>
-                    </Section>
-
-                    <Section style={styles.tipBox}>
-                        <Text style={styles.tipText}>
-                            💡 <strong>טיפ חשוב:</strong> תתחילו מאוטומציה אחת. לא צריך לעשות הכל בבת אחת.
+                        <Text style={styles.text}>
+                            <strong>בתוך המדריך תמצאו:</strong>
                         </Text>
-                    </Section>
 
-                    <Text style={styles.text}>בהצלחה עם ההטמעה!</Text>
+                        <Section style={styles.list}>
+                            <Text style={styles.listItem}>✅ 5 אוטומציות שאפשר להטמיע היום</Text>
+                            <Text style={styles.listItem}>✅ הכלים המדויקים (רובם חינמיים)</Text>
+                            <Text style={styles.listItem}>✅ הוראות צעד אחר צעד בעברית</Text>
+                            <Text style={styles.listItem}>✅ טיפים למעקב ושיפור מתמשך</Text>
+                        </Section>
 
-                    <Text style={styles.signature}>
-                        רועי ברזילי,
-                        <br />
-                        זאפלי
-                    </Text>
+                        <Section style={styles.tipBox}>
+                            <Text style={styles.tipText}>
+                                💡 <strong>טיפ חשוב:</strong> תתחילו מאוטומציה אחת. לא צריך לעשות הכל בבת אחת.
+                            </Text>
+                        </Section>
 
-                    <Hr style={styles.hr} />
+                        <Text style={styles.text}>בהצלחה עם ההטמעה!</Text>
 
-                    <Section style={styles.footer}>
-                        <Text style={styles.footerText}>
-                            <strong>צריכים עזרה עם ההטמעה?</strong>
-                        </Text>
-                        <Text style={styles.footerText}>
-                            אם אתם רוצים שנעזור לכם להגדיר את המערכות האלה (או לבנות משהו מותאם אישית), בואו נדבר.
-                        </Text>
-                        <Link href="https://zapli.co.il/contact" style={styles.footerLink}>
-                            צרו איתנו קשר ←
-                        </Link>
-                    </Section>
+                        <Text style={styles.signature}>צוות זאפלי</Text>
 
-                    <Hr style={styles.hr} />
+                        <Hr style={styles.hr} />
 
-                    <Section style={styles.companyInfo}>
-                        <Text style={styles.companyText}>
-                            <strong>זאפלי</strong> - מערכות חכמות וכלי AI לפרילנסרים ובעלי עסקים קטנים
-                        </Text>
-                        <Text style={styles.companyText}>
-                            <Link href="https://zapli.co.il" style={styles.link}>
-                                zapli.co.il
+                        <Section style={styles.footer}>
+                            <Text style={styles.footerText}>
+                                <strong>צריכים עזרה עם ההטמעה?</strong>
+                            </Text>
+                            <Text style={styles.footerText}>
+                                אם אתם רוצים שנעזור לכם להגדיר את המערכות האלה (או לבנות משהו מותאם אישית), בואו נדבר.
+                            </Text>
+                            <Link href="https://zapli.co.il/contact" style={styles.footerLink}>
+                                צרו איתנו קשר ←
                             </Link>
-                            {" | "}
-                            <Link href="mailto:roy@zapli.co.il" style={styles.link}>
-                                roy@zapli.co.il
-                            </Link>
-                        </Text>
-                    </Section>
+                        </Section>
+
+                        <Hr style={styles.hr} />
+
+                        <Section style={styles.companyInfo}>
+                            <Text style={styles.companyText}>
+                                <strong>זאפלי</strong> - מערכות חכמות וכלי AI לפרילנסרים ובעלי עסקים קטנים
+                            </Text>
+                            <Text style={styles.companyText}>
+                                <Link href="https://zapli.co.il" style={styles.link}>
+                                    zapli.co.il
+                                </Link>
+                                {" | "}
+                                <Link href="mailto:barak@zapli.co.il" style={styles.link}>
+                                    barak@zapli.co.il
+                                </Link>
+                            </Text>
+                        </Section>
+                    </Container>
                 </Container>
             </Body>
         </Html>
