@@ -130,7 +130,7 @@ export async function GuideSenderEmailTemplate({ firstName }: { firstName: strin
 
                         <Section style={styles.companyInfo}>
                             <Text style={styles.companyText}>
-                                <strong>זאפלי</strong> - מערכות חכמות וכלי AI לפרילנסרים ובעלי עסקים קטנים
+                                <strong>זאפלי</strong> - מערכות חכמות וכלי AI לפרילנסרים ובעלי עסקים
                             </Text>
                             <Text style={styles.companyText}>
                                 <Link href="https://zapli.co.il" style={styles.link}>

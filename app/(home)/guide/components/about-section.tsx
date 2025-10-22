@@ -11,8 +11,8 @@ function AboutSection() {
             <div className="max-w-3xl mx-auto text-center">
                 <h2 className="text-2xl font-bold mb-4">מי אנחנו?</h2>
                 <p className="text-muted-foreground mb-6 font-rubik">
-                    אנחנו צוות ישראלי קטן שבונה מערכות חכמות וכלי AI לפרילנסרים ובעלי עסקים קטנים. אנחנו מתמחים
-                    באוטומציות פשוטות שבאמת עובדות — בלי שטויות תאגידיות ובלי סיבוכים מיותרים.
+                    אנחנו צוות ישראלי קטן שבונה מערכות חכמות וכלי AI לפרילנסרים ובעלי עסקים. אנחנו מתמחים באוטומציות
+                    פשוטות שבאמת עובדות — בלי שטויות תאגידיות ובלי סיבוכים מיותרים.
                 </p>
                 <div className="mt-8 flex flex-wrap justify-center gap-4">
                     <Button asChild size="lg" className="font-semibold tracking-wide gap-1">

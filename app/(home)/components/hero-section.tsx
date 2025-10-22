@@ -11,10 +11,10 @@ function HeroSection() {
         <section id="hero" className="h-full -mb-[15vh] flex items-center justify-center">
             <div className="container text-center px-10">
                 <div className="mx-auto flex max-w-screen-lg flex-col gap-6">
-                    <h1 className="text-4xl font-extrabold lg:text-6xl">פתרונות AI לעסקים קטנים בישראל</h1>
+                    <h1 className="text-4xl font-extrabold lg:text-6xl">פתרונות AI לעסקים בישראל</h1>
                     <p className="text-balance font-rubik text-muted-foreground lg:text-lg">
-                        אנחנו לא סוכנות טכנולוגית “גדולה”, אלא צוות שמבין את המציאות של עסקים קטנים בישראל. עם ניסיון
-                        צבאי של +5 שנים, נבנה לכם פתרון חכם ופשוט שעובד באמת.
+                        אנחנו לא סוכנות טכנולוגית “גדולה”, אלא צוות שמבין את המציאות של עסקים בישראל. עם ניסיון צבאי של
+                        +5 שנים, נבנה לכם פתרון חכם ופשוט שעובד באמת.
                     </p>
                 </div>
                 <Button asChild className="mt-10 text-xl font-bold px-12 py-7">

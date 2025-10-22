@@ -8,9 +8,9 @@ function ServicesSection() {
                 <div className="text-center">
                     <h2 className="text-balance text-4xl font-semibold lg:text-5xl">מה אנחנו עושים</h2>
                     <p className="mt-4 font-rubik">
-                        אנחנו עוזרים לעצמאים ובעלי עסקים קטנים להפוך את העסק שלהם ליעיל, רגוע ומסודר – בעזרת אוטומציות
-                        חכמות וכלי AI פשוטים לשימוש. אין לנו “חבילות קבועות” – כל פתרון מותאם אישית לצרכים שלך ולדרך שבה
-                        אתה עובד.
+                        אנחנו עוזרים לעצמאים ובעלי עסקים להפוך את העסק שלהם ליעיל, רגוע ומסודר – בעזרת אוטומציות חכמות
+                        וכלי AI פשוטים לשימוש. אין לנו “חבילות קבועות” – כל פתרון מותאם אישית לצרכים שלך ולדרך שבה אתה
+                        עובד.
                     </p>
                 </div>
                 <div className="max-w-full flex flex-col lg:flex-row mx-auto mt-8 *:text-center md:mt-16">
