@@ -7,7 +7,7 @@ function ServicesSection() {
             <div className="@container mx-auto max-w-5xl px-6">
                 <div className="text-center">
                     <h2 className="text-balance text-4xl font-semibold lg:text-5xl">מה אנחנו עושים</h2>
-                    <p className="mt-4 font-rubik">
+                    <p className="mt-4 font-rubik lg:text-lg">
                         אנחנו עוזרים לעצמאים ובעלי עסקים להפוך את העסק שלהם ליעיל, רגוע ומסודר – בעזרת אוטומציות חכמות
                         וכלי AI פשוטים לשימוש. אין לנו “חבילות קבועות” – כל פתרון מותאם אישית לצרכים שלך ולדרך שבה אתה
                         עובד.
@@ -45,7 +45,7 @@ function ServicesSection() {
                 </div>
                 <div className="flex items-start justify-center gap-2 my-16">
                     <h3 className="font-semibold text-lg whitespace-nowrap">המטרה שלנו 🎯</h3>
-                    <p className="font-rubik mt-0.5">
+                    <p className="font-rubik mt-0.5 lg:text-lg">
                         לאפשר לך לעבוד פחות – ולהרוויח יותר, עם עסק שעובד חכם, מסודר ושקט בראש.
                     </p>
                 </div>

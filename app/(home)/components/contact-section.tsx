@@ -11,7 +11,7 @@ function ContactSection() {
             <div className="mx-auto max-w-5xl px-6">
                 <div className="text-center">
                     <h2 className="text-balance text-4xl font-semibold lg:text-5xl">איך אפשר להתחיל?</h2>
-                    <p className="mt-4 font-rubik">
+                    <p className="mt-4 font-rubik lg:text-lg">
                         דברו איתנו ונקבע שיחת ייעוץ קצרה כדי להבין בדיוק מה העסק שלכם צריך.
                     </p>
 

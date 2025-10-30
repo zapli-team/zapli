@@ -3,7 +3,6 @@ import Link from "next/link";
 
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { TEAM } from "@/utils/consts";
 
 function AboutSection() {
@@ -13,7 +12,7 @@ function AboutSection() {
                 <div className="grid gap-6 md:grid-cols-2 md:gap-12">
                     <div className="space-y-6">
                         <h2 className="text-4xl font-medium">אנחנו צוות קטן עם תשוקה לטכנולוגיה ועסקים</h2>
-                        <div className="mx-4 inline-flex items-center -space-x-2">
+                        {/* <div className="mx-4 inline-flex items-center -space-x-2">
                             {TEAM.map((member) => (
                                 <Tooltip key={member.src}>
                                     <TooltipTrigger asChild>
@@ -28,7 +27,7 @@ function AboutSection() {
                                     </TooltipContent>
                                 </Tooltip>
                             ))}
-                        </div>
+                        </div> */}
                     </div>
                     <div className="space-y-4 font-rubik">
                         <p>
@@ -45,11 +44,22 @@ function AboutSection() {
                         </p>
                         <Button asChild variant="secondary" size="sm" className="gap-1 pl-1.5 mt-6">
                             <Link href="/contact">
-                                <span>לקביעת פגישה</span>
+                                <span>לקביעת שיחת ייעוץ חינם</span>
                                 <ChevronLeft className="size-2" />
                             </Link>
                         </Button>
                     </div>
+                </div>
+                <div className="max-w-full w-fit flex flex-col lg:flex-row mx-auto mt-8 *:text-center md:mt-16 gap-4">
+                    {TEAM.map((member) => (
+                        <div key={member.name} className="p-4 flex flex-col items-center">
+                            <Avatar className="size-20 border">
+                                <AvatarImage src={member.src} alt={member.name} />
+                            </Avatar>
+                            <h2 className="whitespace-nowrap mt-4 font-medium text-lg">{member.name}</h2>
+                            <div className="font-rubik text-muted-foreground">{member.title}</div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

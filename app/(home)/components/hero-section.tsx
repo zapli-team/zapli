@@ -18,7 +18,7 @@ function HeroSection() {
                     </p>
                 </div>
                 <Button asChild className="mt-10 text-xl font-bold px-12 py-7">
-                    <Link href="/contact">צרו קשר</Link>
+                    <Link href="/contact">לשיחת ייעוץ חינם</Link>
                 </Button>
                 <div className="mx-auto mt-10 flex w-fit flex-col items-center gap-4 sm:flex-row">
                     <span className="mx-4 inline-flex items-center -space-x-2">

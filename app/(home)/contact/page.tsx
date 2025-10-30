@@ -11,7 +11,7 @@ export default function ContactPage() {
         <section className="py-48">
             <div className="mx-auto max-w-3xl px-4 sm:px-8 lg:px-0">
                 <h1 className="text-center text-4xl font-semibold lg:text-5xl">צרו איתנו קשר</h1>
-                <p className="mt-4 text-center flex items-center justify-center gap-2 font-rubik">
+                <p className="mt-4 text-center flex items-center justify-center gap-2 font-rubik lg:text-lg">
                     קחו חצי דקה למלא את הטופס ונחזור אליכם בוואטסאפ <ArrowDown className="size-3 hidden md:block" />
                 </p>
 

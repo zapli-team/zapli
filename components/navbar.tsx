@@ -21,10 +21,11 @@ function Navbar({ className, ...props }: React.ComponentProps<"div">) {
                             "relative flex items-center gap-2 hover:text-primary",
                             index > 3 && "hidden sm:flex"
                         )}
+                        style={{ "--primary": social.color } as React.CSSProperties}
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <social.icon size={20} />
+                        <social.icon size={24} />
                         {social.title && <span className="hidden lg:inline-flex text-sm">{social.title}</span>}
                     </Link>
                 ))}

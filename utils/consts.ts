@@ -34,27 +34,33 @@ export const SOCIALS = [
         title: "barak@zapli.co.il",
         icon: TbMailFilled,
         href: "mailto:barak@zapli.co.il",
+        color: "#D93025",
     },
     {
         title: "+972-50-753-7633",
         icon: TbBrandWhatsapp,
         href: `https://wa.me/972507537633?text=${DEFAULT_WHATSAPP_MSG}`,
+        color: "#25D366",
     },
     {
         icon: TbBrandInstagramFilled,
         href: "https://www.instagram.com/roybarzilay1",
+        color: "#833AB4",
     },
     {
         icon: TbBrandTiktokFilled,
         href: "https://www.tiktok.com/@roybarzilay1",
+        color: "#EE1D52",
     },
     {
         icon: TbBrandYoutubeFilled,
         href: "https://www.youtube.com/@roybarzilay1",
+        color: "#FF0000",
     },
     {
         icon: TbBrandFacebookFilled,
         href: "https://www.facebook.com/zapli.co.il",
+        color: "#1877F2",
     },
 ];
 
@@ -79,13 +85,17 @@ export const CLIENTS = [
         src: "/images/clients/moshe.png",
         name: "משה טלית",
     },
+    {
+        src: "/images/clients/vered.png",
+        name: "ורד סילן",
+    },
 ];
 
 export const TEAM = [
     {
-        src: "/images/team/barak.png",
-        name: "ברק באטיטו",
-        title: "אחראי שיווק וצמיחה עסקית",
+        src: "/images/team/roy.png",
+        name: "רועי ברזילי",
+        title: "מייסד ומפתח מערכות חכמות",
     },
     {
         src: "/images/team/michael.png",
@@ -93,9 +103,9 @@ export const TEAM = [
         title: "מפתח ומומחה תשתיות",
     },
     {
-        src: "/images/team/roy.png",
-        name: "רועי ברזילי",
-        title: "מייסד ומפתח מערכות חכמות",
+        src: "/images/team/barak.png",
+        name: "ברק באטיטו",
+        title: "אחראי שיווק וצמיחה עסקית",
     },
 ];
 
