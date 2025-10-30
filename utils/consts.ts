@@ -43,14 +43,14 @@ export const SOCIALS = [
         color: "#25D366",
     },
     {
-        icon: TbBrandInstagramFilled,
-        href: "https://www.instagram.com/roybarzilay1",
-        color: "#833AB4",
-    },
-    {
         icon: TbBrandTiktokFilled,
         href: "https://www.tiktok.com/@roybarzilay1",
         color: "#EE1D52",
+    },
+    {
+        icon: TbBrandInstagramFilled,
+        href: "https://www.instagram.com/roybarzilay1",
+        color: "#833AB4",
     },
     {
         icon: TbBrandYoutubeFilled,

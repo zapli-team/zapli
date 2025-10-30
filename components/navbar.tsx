@@ -12,14 +12,14 @@ function Navbar({ className, ...props }: React.ComponentProps<"div">) {
             <Link href="/" title="עמוד הבית">
                 <Logo />
             </Link>
-            <nav dir="ltr" className="flex items-center justify-center font-rubik gap-3 sm:gap-6 lg:gap-8">
+            <nav dir="ltr" className="flex items-center justify-center font-rubik gap-5 sm:gap-6 lg:gap-8">
                 {SOCIALS.map((social, index) => (
                     <Link
                         key={social.href}
                         href={social.href}
                         className={cn(
                             "relative flex items-center gap-2 hover:text-primary",
-                            index > 3 && "hidden sm:flex"
+                            index > 2 && "hidden sm:flex"
                         )}
                         style={{ "--primary": social.color } as React.CSSProperties}
                         target="_blank"
