@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 
 import { Button } from "@/components/ui/button";
-import { DEFAULT_WHATSAPP_MSG } from "@/utils/consts";
+import { WHATSAPP_BOT_URL } from "@/utils/consts";
 
 function AboutSection() {
     return (
@@ -21,17 +21,15 @@ function AboutSection() {
                             <ChevronLeft className="size-3" />
                         </Link>
                     </Button>
-
-                    <Button asChild size="lg" variant="outline" className="font-semibold tracking-wide gap-1">
-                        <Link
-                            href={`https://wa.me/972507537633?text=${DEFAULT_WHATSAPP_MSG}`}
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            ישירות בוואטסאפ
-                            <FaWhatsapp />
-                        </Link>
-                    </Button>
+                    <div className="space-y-2">
+                        <Button asChild size="lg" variant="outline" className="font-semibold tracking-wide gap-1">
+                            <Link href={WHATSAPP_BOT_URL} target="_blank" rel="noreferrer">
+                                דברו עם צ'אטבוט בוואטסאפ
+                                <FaWhatsapp />
+                            </Link>
+                        </Button>
+                        <p className="text-sm font-rubik">עובד גם עם הודעות קוליות!</p>
+                    </div>
                 </div>
             </div>
         </section>

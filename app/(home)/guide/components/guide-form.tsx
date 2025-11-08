@@ -14,7 +14,10 @@ import { useMutation } from "@tanstack/react-query";
 const formSchema = z.object({
     firstName: z.string("שם פרטי הוא שדה חובה").trim().min(2, "שם פרטי חייב להיות באורך של 2 תווים לפחות"),
     lastName: z.string("שם משפחה הוא שדה חובה").trim().min(2, "שם משפחה חייב להיות באורך של 2 תווים לפחות"),
-    email: z.email("דוא" + '"' + "ל הוא שדה חובה").trim(),
+    phone: z
+        .string("מס' טלפון הוא שדה חובה")
+        .trim()
+        .transform((val) => val.replace(/\D/g, "")),
     timeWaster: z.string().optional(),
 });
 
@@ -28,21 +31,21 @@ function GuideForm() {
         defaultValues: {
             firstName: "",
             lastName: "",
-            email: "",
+            phone: "",
             timeWaster: "",
         },
     });
 
     const { mutate: send, isPending } = useMutation({
         mutationKey: ["send-email"],
-        mutationFn: async (data: FormValues) => axios.post("/api/email/guide", data),
+        mutationFn: async (data: FormValues) => axios.post("/api/whatsapp/guide", data),
         onError: () => toast.error("משהו השתבש בשליחת הבקשה שלכם. אנא נסו שוב מאוחר יותר."),
         onSuccess: () => router.push("/guide/success"),
     });
 
     return (
         <Form {...form}>
-            <form className="space-y-4" onSubmit={form.handleSubmit((d) => send(d))}>
+            <form className="space-y-4" onSubmit={form.handleSubmit((d) => send({ ...d, phone: "972" + d.phone }))}>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                     <FormField
                         control={form.control}
@@ -75,19 +78,21 @@ function GuideForm() {
 
                 <FormField
                     control={form.control}
-                    name="email"
+                    name="phone"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>אימייל</FormLabel>
+                            <FormLabel>מס' טלפון</FormLabel>
                             <FormControl>
                                 <Input
                                     dir="ltr"
-                                    type="email"
-                                    placeholder="your@email.com"
+                                    type="tel"
+                                    placeholder="+972523456789"
                                     className="text-right"
-                                    autoComplete="email"
-                                    inputMode="email"
+                                    autoComplete="tel"
+                                    inputMode="tel"
                                     {...field}
+                                    value={"+972" + field.value}
+                                    onChange={(e) => field.onChange(e.target.value.slice(4).replace(/\D/g, ""))}
                                 />
                             </FormControl>
                             <FormMessage />
@@ -105,7 +110,7 @@ function GuideForm() {
                                 <span className="text-muted-foreground text-sm font-normal">(אופציונלי)</span>
                             </FormLabel>
                             <FormControl>
-                                <Input placeholder="לרדוף אחרי לקוחות לתשובות" {...field} />
+                                <Input placeholder="לענות לטלפונים עם שאלות חוזרות" {...field} />
                             </FormControl>
                             <FormDescription>זה עוזר לנו להבין איך לעזור לך.</FormDescription>
                             <FormMessage />

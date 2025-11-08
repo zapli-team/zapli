@@ -8,7 +8,7 @@ import { ContactForm } from "./contact-form";
 
 export default function ContactPage() {
     return (
-        <section className="py-48">
+        <section className="py-48 space-y-48">
             <div className="mx-auto max-w-3xl px-4 sm:px-8 lg:px-0">
                 <h1 className="text-center text-4xl font-semibold lg:text-5xl">צרו איתנו קשר</h1>
                 <p className="mt-4 text-center flex items-center justify-center gap-2 font-rubik lg:text-lg">
@@ -35,6 +35,19 @@ export default function ContactPage() {
                     </div>
                     <ContactForm />
                 </Card>
+            </div>
+            <div id="book" className="space-y-12 px-4">
+                <h1 className="text-center text-3xl sm:text-4xl font-semibold lg:text-5xl">
+                    תתאמו איתנו שיחת ייעוץ חינם
+                </h1>
+                <div className="bg-white mx-auto max-w-7xl h-[80vh] rounded-2xl overflow-hidden">
+                    <iframe
+                        src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2q1uDPwIvAxsNTUPA5JYpr6VvkRQ2RjevIbD33AhviawJ-fO-Sq2Nv_72em-9j8nfu8YgC_QFk?gv=true&hl=he&ctz=Asia/Jerusalem"
+                        className="border-none"
+                        width="100%"
+                        height="100%"
+                    />
+                </div>
             </div>
         </section>
     );

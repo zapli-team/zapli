@@ -137,8 +137,8 @@ export async function GuideSenderEmailTemplate({ firstName }: { firstName: strin
                                     zapli.co.il
                                 </Link>
                                 {" | "}
-                                <Link href="mailto:barak@zapli.co.il" style={styles.link}>
-                                    barak@zapli.co.il
+                                <Link href="mailto:contact@zapli.co.il" style={styles.link}>
+                                    contact@zapli.co.il
                                 </Link>
                             </Text>
                         </Section>

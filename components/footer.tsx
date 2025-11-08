@@ -1,17 +1,27 @@
 import Link from "next/link";
 
 import { Logo } from "@/components/ui/logo";
-import { NAVIGATION, SOCIALS } from "@/utils/consts";
+import { NAVIGATION, SOCIALS, WHATSAPP_HUMAN_URL } from "@/utils/consts";
 
 function Footer() {
     return (
         <footer className="py-16 md:py-32">
-            <div className="mx-auto max-w-5xl px-6">
+            <div className="mx-auto max-w-5xl px-6 space-y-8">
                 <Link href="/" aria-label="go home" className="mx-auto block size-fit">
                     <Logo />
                 </Link>
-
-                <div className="my-8 flex flex-wrap justify-center gap-6 text-sm tracking-wide">
+                <span className="block text-center text-sm tracking-wide">
+                    רוצים לדבר עם בן אדם?{" "}
+                    <Link
+                        href={WHATSAPP_HUMAN_URL}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="underline underline-offset-2"
+                    >
+                        כתבו לנו כאן
+                    </Link>
+                </span>
+                <div className="flex flex-wrap justify-center gap-6 text-sm tracking-wide">
                     {NAVIGATION.map((link) => (
                         <Link
                             key={link.href}
@@ -22,7 +32,7 @@ function Footer() {
                         </Link>
                     ))}
                 </div>
-                <div dir="ltr" className="my-8 flex flex-wrap justify-center gap-6 text-sm">
+                <div dir="ltr" className="flex flex-wrap justify-center gap-6 text-sm">
                     {SOCIALS.map((social) => (
                         <Link
                             key={social.href}

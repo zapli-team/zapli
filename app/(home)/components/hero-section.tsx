@@ -13,12 +13,12 @@ function HeroSection() {
                 <div className="mx-auto flex max-w-screen-lg flex-col gap-6">
                     <h1 className="text-4xl font-extrabold lg:text-6xl">פתרונות AI לעסקים בישראל</h1>
                     <p className="text-balance font-rubik text-muted-foreground lg:text-lg">
-                        אנחנו לא סוכנות טכנולוגית “גדולה”, אלא צוות שמבין את המציאות של עסקים בישראל. עם ניסיון צבאי של
-                        +5 שנים, נבנה לכם פתרון חכם ופשוט שעובד באמת.
+                        אנחנו לא סוכנות טכנולוגית “גדולה”, אלא צוות שמבין את המציאות של עסקים בישראל. עם ניסיון טכנולוגי
+                        צבאי של +5 שנים, נבנה לכם פתרון חכם ופשוט שעובד באמת.
                     </p>
                 </div>
                 <Button asChild className="mt-10 text-xl font-bold px-12 py-7">
-                    <Link href="/contact">לשיחת ייעוץ חינם</Link>
+                    <Link href="/contact#book">לשיחת ייעוץ חינם</Link>
                 </Button>
                 <div className="mx-auto mt-10 flex w-fit flex-col items-center gap-4 sm:flex-row">
                     <span className="mx-4 inline-flex items-center -space-x-2">

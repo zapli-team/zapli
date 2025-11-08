@@ -8,7 +8,11 @@ import {
     TbMailFilled,
 } from "react-icons/tb";
 
-export const DEFAULT_WHATSAPP_MSG = encodeURIComponent("מה קורה? אשמח לדבר אתכם על העסק שלי");
+const DEFAULT_WHATSAPP_MSG = encodeURIComponent("מה קורה? אשמח לדבר איתכם על העסק שלי");
+export const WHATSAPP_BOT_NUMBER = "972527018120";
+export const WHATSAPP_HUMAN_NUMBER = "972507537633";
+export const WHATSAPP_BOT_URL = `https://wa.me/${WHATSAPP_BOT_NUMBER}?text=${DEFAULT_WHATSAPP_MSG}`;
+export const WHATSAPP_HUMAN_URL = `https://wa.me/${WHATSAPP_HUMAN_NUMBER}?text=${DEFAULT_WHATSAPP_MSG}`;
 
 export const NAVIGATION = [
     {
@@ -31,16 +35,16 @@ export const NAVIGATION = [
 
 export const SOCIALS = [
     {
-        title: "barak@zapli.co.il",
-        icon: TbMailFilled,
-        href: "mailto:barak@zapli.co.il",
-        color: "#D93025",
+        title: "דברו עם צ'אטבוט",
+        icon: TbBrandWhatsapp,
+        href: WHATSAPP_BOT_URL,
+        color: "#25D366",
     },
     {
-        title: "+972-50-753-7633",
-        icon: TbBrandWhatsapp,
-        href: `https://wa.me/972507537633?text=${DEFAULT_WHATSAPP_MSG}`,
-        color: "#25D366",
+        title: "contact@zapli.co.il",
+        icon: TbMailFilled,
+        href: "mailto:contact@zapli.co.il",
+        color: "#D93025",
     },
     {
         icon: TbBrandTiktokFilled,
@@ -87,7 +91,7 @@ export const CLIENTS = [
     },
     {
         src: "/images/clients/vered.png",
-        name: "ורד סילן",
+        name: "ורד סולן",
     },
 ];
 

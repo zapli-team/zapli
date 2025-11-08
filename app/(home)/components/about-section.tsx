@@ -43,7 +43,7 @@ function AboutSection() {
                             ברורה, נוחה לתחזוקה, ומתאימה בדיוק לאופן שבו אתה עובד.
                         </p>
                         <Button asChild variant="secondary" size="sm" className="gap-1 pl-1.5 mt-6">
-                            <Link href="/contact">
+                            <Link href="/contact#book">
                                 <span>לקביעת שיחת ייעוץ חינם</span>
                                 <ChevronLeft className="size-2" />
                             </Link>

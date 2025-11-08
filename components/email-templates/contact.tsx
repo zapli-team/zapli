@@ -1,4 +1,4 @@
-import { DEFAULT_WHATSAPP_MSG } from "@/utils/consts";
+import { WHATSAPP_BOT_URL } from "@/utils/consts";
 import { Body, Container, Head, Heading, Hr, Html, Link, Preview, Section, Text } from "@react-email/components";
 
 import { styles } from "./utils/consts";
@@ -86,10 +86,7 @@ export function ContactSenderEmailTemplate({ firstName }: { firstName: string })
                                 <strong>פנייה דחופה?</strong>
                                 <br />
                                 תרגישו חופשי לפנות אלינו בוואטסאפ:{" "}
-                                <Link
-                                    href={`https://wa.me/972507537633?text=${DEFAULT_WHATSAPP_MSG}`}
-                                    style={styles.whatsappLink}
-                                >
+                                <Link href={WHATSAPP_BOT_URL} style={styles.whatsappLink}>
                                     050-753-7633
                                 </Link>
                             </Text>
@@ -112,8 +109,8 @@ export function ContactSenderEmailTemplate({ firstName }: { firstName: string })
                                     zapli.co.il
                                 </Link>
                                 {" | "}
-                                <Link href="mailto:barak@zapli.co.il" style={styles.link}>
-                                    barak@zapli.co.il
+                                <Link href="mailto:contact@zapli.co.il" style={styles.link}>
+                                    contact@zapli.co.il
                                 </Link>
                             </Text>
                         </Section>
