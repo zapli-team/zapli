@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
             type: "template",
             template: {
                 name: "contact_form_sender_message",
-                language: { code: "he" },
+                language: { code: "en" },
                 components: [
                     {
                         type: "body",
@@ -62,8 +62,9 @@ export async function POST(req: NextRequest) {
             axios.post(GRAPH_URL, senderPayload, { headers: { Authorization: `Bearer ${META_TOKEN}` } }),
         ]);
 
-        return NextResponse.json({ admin, sender });
+        return NextResponse.json({ admin: admin.data, sender: sender.data });
     } catch (error: any) {
+        console.log(error.toJSON());
         return new NextResponse(`Internal Server Error: ${error.message}`, { status: 500 });
     }
 }

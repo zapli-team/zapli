@@ -62,7 +62,7 @@ export async function POST(req: NextRequest) {
             axios.post(GRAPH_URL, senderPayload, { headers: { Authorization: `Bearer ${META_TOKEN}` } }),
         ]);
 
-        return NextResponse.json({ admin, sender });
+        return NextResponse.json({ admin: admin.data, sender: sender.data });
     } catch (error) {
         return new NextResponse(`Internal Server Error: ${error}`, { status: 500 });
     }
