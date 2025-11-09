@@ -178,4 +178,7 @@
     body {
         @apply bg-background text-foreground font-ploni;
     }
+    .userway_buttons_wrapper {
+        @apply top-auto! right-auto! bottom-10! left-10! transform-none!;
+    }
 }

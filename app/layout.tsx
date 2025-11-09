@@ -3,6 +3,7 @@ import "./globals.css";
 
 import { Roboto, Rubik } from "next/font/google";
 import LocalFont from "next/font/local";
+import Script from "next/script";
 
 import { Toaster } from "@/components/ui/sonner";
 import QueryProvider from "@/providers/query-provider";
@@ -46,6 +47,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="he" dir="rtl" className="dark" suppressHydrationWarning>
+            <Script
+                src="https://cdn.userway.org/widget.js"
+                data-language="he"
+                data-widget_layout="full"
+                data-account="pBMlEOnXjR"
+                strategy="afterInteractive"
+            />
             <body className={cn("antialiased", ploni.variable, rubik.variable, roboto.variable)}>
                 <QueryProvider>{children}</QueryProvider>
                 <Toaster />
