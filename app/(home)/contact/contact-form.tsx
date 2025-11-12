@@ -45,8 +45,9 @@ function ContactForm({ className, ...props }: React.ComponentProps<"form">) {
     });
 
     const { mutate: send, isPending } = useMutation({
-        mutationKey: ["send-email"],
-        mutationFn: async (data: FormValues) => axios.post("/api/email/contact", data),
+        mutationKey: ["send-contact"],
+        mutationFn: async (data: FormValues) =>
+            Promise.all([axios.post("/api/whatsapp/contact", data), axios.post("/api/email/contact", data)]),
         onError: () => toast.error("משהו השתבש בשליחת הבקשה שלכם. אנא נסו שוב מאוחר יותר."),
         onSuccess: () => {
             toast.success("בקשתכם נשלחה בהצלחה!");

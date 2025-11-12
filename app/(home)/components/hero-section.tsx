@@ -8,7 +8,7 @@ import { CLIENTS } from "@/utils/consts";
 
 function HeroSection() {
     return (
-        <section id="hero" className="h-full -mb-[15vh] flex items-center justify-center">
+        <section id="hero" className="pt-[calc(50vh-200px)] flex justify-center pb-[10vh]">
             <div className="container text-center px-10">
                 <div className="mx-auto flex max-w-screen-lg flex-col gap-6">
                     <h1 className="text-4xl font-extrabold lg:text-6xl">פתרונות AI לעסקים בישראל</h1>

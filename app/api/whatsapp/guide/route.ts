@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
                             { type: "text", parameter_name: "first_name", text: data.firstName },
                             { type: "text", parameter_name: "last_name", text: data.lastName },
                             { type: "text", parameter_name: "phone", text: data.phone },
-                            { type: "text", parameter_name: "time_waster", text: data.timeWaster || "" },
+                            { type: "text", parameter_name: "time_waster", text: data.timeWaster || "לא כתב/ה כלום" },
                         ],
                     },
                 ],
@@ -50,6 +50,18 @@ export async function POST(req: NextRequest) {
                 language: { code: "he" },
                 components: [
                     {
+                        type: "header",
+                        parameters: [
+                            {
+                                type: "document",
+                                document: {
+                                    link: "https://zapli.co.il/downloads/מדריך - 5 משימות שכל בעל עסק צריך לבצע אוטומטית השבוע.pdf",
+                                    filename: "מדריך - 5 משימות שכל בעל עסק צריך לבצע אוטומטית השבוע.pdf",
+                                },
+                            },
+                        ],
+                    },
+                    {
                         type: "body",
                         parameters: [{ type: "text", parameter_name: "first_name", text: data.firstName }],
                     },
@@ -58,8 +70,7 @@ export async function POST(req: NextRequest) {
         };
 
         const [admin, sender] = await Promise.all([
-            // axios.post(GRAPH_URL, adminPayload, { headers: { Authorization: `Bearer ${META_TOKEN}` } }),
-            { data: {} },
+            axios.post(GRAPH_URL, adminPayload, { headers: { Authorization: `Bearer ${META_TOKEN}` } }),
             axios.post(GRAPH_URL, senderPayload, { headers: { Authorization: `Bearer ${META_TOKEN}` } }),
         ]);
 

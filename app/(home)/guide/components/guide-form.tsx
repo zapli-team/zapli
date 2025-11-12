@@ -39,8 +39,9 @@ function GuideForm() {
     });
 
     const { mutate: send, isPending } = useMutation({
-        mutationKey: ["send-email"],
-        mutationFn: async (data: FormValues) => axios.post("/api/email/guide", data),
+        mutationKey: ["send-guide"],
+        mutationFn: async (data: FormValues) =>
+            Promise.all([axios.post("/api/whatsapp/guide", data), axios.post("/api/email/guide", data)]),
         onError: () => toast.error("משהו השתבש בשליחת הבקשה שלכם. אנא נסו שוב מאוחר יותר."),
         onSuccess: () => router.push("/guide/success"),
     });

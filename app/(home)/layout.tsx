@@ -8,7 +8,7 @@ export default function HomeLayout({ children }: React.PropsWithChildren) {
     return (
         <main className="h-full">
             <Background />
-            <Navbar className="absolute top-0" />
+            <Navbar />
             {children}
             <Footer />
         </main>
