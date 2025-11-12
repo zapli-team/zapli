@@ -18,11 +18,13 @@ export function GuideAdminEmailTemplate({
     firstName,
     lastName,
     email,
+    phone,
     timeWaster,
 }: {
     firstName: string;
     lastName: string;
     email: string;
+    phone: string;
     timeWaster?: string;
 }) {
     return (
@@ -45,9 +47,18 @@ export function GuideAdminEmailTemplate({
 
                         <Section style={styles.infoSection}>
                             <Text style={styles.label}>דוא"ל:</Text>
-                            <Text style={styles.value}>
+                            <Text style={{ ...styles.value, direction: "ltr" }}>
                                 <Link href={`mailto:${email}`} style={styles.emailLink}>
                                     {email}
+                                </Link>
+                            </Text>
+                        </Section>
+
+                        <Section style={styles.infoSection}>
+                            <Text style={styles.label}>מס' טלפון:</Text>
+                            <Text style={{ ...styles.value, direction: "ltr" }}>
+                                <Link href={`tel:${phone}`} style={styles.emailLink}>
+                                    {phone}
                                 </Link>
                             </Text>
                         </Section>

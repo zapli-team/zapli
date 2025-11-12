@@ -17,6 +17,7 @@ import { useMutation } from "@tanstack/react-query";
 const contactSchema = z.object({
     firstName: z.string("שם פרטי הוא שדה חובה").trim().min(2, "שם פרטי חייב להיות באורך של 2 תווים לפחות"),
     lastName: z.string("שם משפחה הוא שדה חובה").trim().min(2, "שם משפחה חייב להיות באורך של 2 תווים לפחות"),
+    email: z.email("דוא" + '"' + "ל הוא שדה חובה").trim(),
     phone: z
         .string("מס' טלפון הוא שדה חובה")
         .trim()
@@ -37,6 +38,7 @@ function ContactForm({ className, ...props }: React.ComponentProps<"form">) {
         defaultValues: {
             firstName: "",
             lastName: "",
+            email: "",
             phone: "",
             message: "",
         },
@@ -44,7 +46,7 @@ function ContactForm({ className, ...props }: React.ComponentProps<"form">) {
 
     const { mutate: send, isPending } = useMutation({
         mutationKey: ["send-email"],
-        mutationFn: async (data: FormValues) => axios.post("/api/whatsapp/contact", data),
+        mutationFn: async (data: FormValues) => axios.post("/api/email/contact", data),
         onError: () => toast.error("משהו השתבש בשליחת הבקשה שלכם. אנא נסו שוב מאוחר יותר."),
         onSuccess: () => {
             toast.success("בקשתכם נשלחה בהצלחה!");
@@ -88,6 +90,28 @@ function ContactForm({ className, ...props }: React.ComponentProps<"form">) {
                         )}
                     />
                 </div>
+
+                <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>אימייל</FormLabel>
+                            <FormControl>
+                                <Input
+                                    dir="ltr"
+                                    type="email"
+                                    placeholder="your@email.com"
+                                    className="text-right"
+                                    autoComplete="email"
+                                    inputMode="email"
+                                    {...field}
+                                />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
 
                 <FormField
                     control={form.control}

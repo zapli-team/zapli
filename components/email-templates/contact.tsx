@@ -36,7 +36,7 @@ export function ContactAdminEmailTemplate({
 
                         <Section style={styles.infoSection}>
                             <Text style={styles.label}>דוא"ל:</Text>
-                            <Text style={styles.value}>
+                            <Text style={{ ...styles.value, direction: "ltr" }}>
                                 <Link href={`mailto:${email}`} style={styles.emailLink}>
                                     {email}
                                 </Link>

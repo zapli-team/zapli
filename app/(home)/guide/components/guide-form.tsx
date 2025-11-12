@@ -14,6 +14,7 @@ import { useMutation } from "@tanstack/react-query";
 const formSchema = z.object({
     firstName: z.string("שם פרטי הוא שדה חובה").trim().min(2, "שם פרטי חייב להיות באורך של 2 תווים לפחות"),
     lastName: z.string("שם משפחה הוא שדה חובה").trim().min(2, "שם משפחה חייב להיות באורך של 2 תווים לפחות"),
+    email: z.email("דוא" + '"' + "ל הוא שדה חובה").trim(),
     phone: z
         .string("מס' טלפון הוא שדה חובה")
         .trim()
@@ -31,6 +32,7 @@ function GuideForm() {
         defaultValues: {
             firstName: "",
             lastName: "",
+            email: "",
             phone: "",
             timeWaster: "",
         },
@@ -38,7 +40,7 @@ function GuideForm() {
 
     const { mutate: send, isPending } = useMutation({
         mutationKey: ["send-email"],
-        mutationFn: async (data: FormValues) => axios.post("/api/whatsapp/guide", data),
+        mutationFn: async (data: FormValues) => axios.post("/api/email/guide", data),
         onError: () => toast.error("משהו השתבש בשליחת הבקשה שלכם. אנא נסו שוב מאוחר יותר."),
         onSuccess: () => router.push("/guide/success"),
     });
@@ -75,6 +77,28 @@ function GuideForm() {
                         )}
                     />
                 </div>
+
+                <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>אימייל</FormLabel>
+                            <FormControl>
+                                <Input
+                                    dir="ltr"
+                                    type="email"
+                                    placeholder="your@email.com"
+                                    className="text-right"
+                                    autoComplete="email"
+                                    inputMode="email"
+                                    {...field}
+                                />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
 
                 <FormField
                     control={form.control}

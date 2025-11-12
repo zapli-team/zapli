@@ -10,7 +10,7 @@ export type Payload = {
             sub_type?: "url" | "quick_reply";
             index?: string;
             parameters: Array<
-                | { type: "text"; parameter_name: string; text: string }
+                | { type: "text"; parameter_name?: string; text: string }
                 | { type: "currency"; currency: { fallback_value: string; code: string; amount_1000: number } }
                 | { type: "date_time"; date_time: { fallback_value: string } }
                 | { type: "image"; image: { link: string } }

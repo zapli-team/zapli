@@ -50,7 +50,7 @@ export async function POST(req: NextRequest) {
                 language: { code: "en" },
                 components: [
                     {
-                        type: "body",
+                        type: "header",
                         parameters: [{ type: "text", parameter_name: "first_name", text: data.firstName }],
                     },
                 ],
@@ -58,13 +58,18 @@ export async function POST(req: NextRequest) {
         };
 
         const [admin, sender] = await Promise.all([
-            axios.post(GRAPH_URL, adminPayload, { headers: { Authorization: `Bearer ${META_TOKEN}` } }),
+            // axios.post(GRAPH_URL, adminPayload, { headers: { Authorization: `Bearer ${META_TOKEN}` } }),
+            { data: {} },
             axios.post(GRAPH_URL, senderPayload, { headers: { Authorization: `Bearer ${META_TOKEN}` } }),
         ]);
 
         return NextResponse.json({ admin: admin.data, sender: sender.data });
     } catch (error: any) {
-        console.log(error.toJSON());
+        if (error.response) {
+            console.error("Graph error:", JSON.stringify(error.response.data, null, 2));
+        } else {
+            console.error(error);
+        }
         return new NextResponse(`Internal Server Error: ${error.message}`, { status: 500 });
     }
 }

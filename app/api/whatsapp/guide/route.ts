@@ -58,7 +58,8 @@ export async function POST(req: NextRequest) {
         };
 
         const [admin, sender] = await Promise.all([
-            axios.post(GRAPH_URL, adminPayload, { headers: { Authorization: `Bearer ${META_TOKEN}` } }),
+            // axios.post(GRAPH_URL, adminPayload, { headers: { Authorization: `Bearer ${META_TOKEN}` } }),
+            { data: {} },
             axios.post(GRAPH_URL, senderPayload, { headers: { Authorization: `Bearer ${META_TOKEN}` } }),
         ]);
 
