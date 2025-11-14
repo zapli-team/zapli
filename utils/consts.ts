@@ -10,8 +10,7 @@ import {
 
 const DEFAULT_WHATSAPP_MSG = encodeURIComponent("מה קורה? אשמח לדבר איתכם על העסק שלי");
 export const WHATSAPP_BOT_NUMBER = "972527018120";
-// export const WHATSAPP_HUMAN_NUMBER = "972507537633";
-export const WHATSAPP_HUMAN_NUMBER = "972547642767";
+export const WHATSAPP_HUMAN_NUMBER = "972507537633";
 export const WHATSAPP_BOT_URL = `https://wa.me/${WHATSAPP_BOT_NUMBER}?text=${DEFAULT_WHATSAPP_MSG}`;
 export const WHATSAPP_HUMAN_URL = `https://wa.me/${WHATSAPP_HUMAN_NUMBER}?text=${DEFAULT_WHATSAPP_MSG}`;
 
